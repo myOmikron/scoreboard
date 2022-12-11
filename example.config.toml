@@ -1,0 +1,20 @@
+[Server]
+ListenAddress = "127.0.0.1"
+ListenPort = 8080
+
+[Logging]
+LogLevel = "debug"
+Path = "logs/main.log"
+RotationFileSize = "10 MB"
+MaxRotationCount = 10
+
+[[Logging.AdditionalFileLoggers]]
+Name = "requests"
+AddToMainLogger = true
+Path = "logs/requests.log"
+RotationFileSize = "10 MB"
+MaxRotationCount = 5
+AlternativePattern = "{h([{d(%Y-%m-%d %H:%M:%S)} | {({l}):5.5}])} {m}{n}"
+
+[Database]
+FileName = "scoreboard.sqlite3"

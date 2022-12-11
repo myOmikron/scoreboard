@@ -1,0 +1,45 @@
+[package]
+name = "scoreboard"
+version = "0.1.0"
+edition = "2021"
+description = "A simple scoreboard server"
+license = "AGPL"
+authors = ["Niklas Pfister <git@omikron.dev>"]
+repository = "https://github.com/myOmikron/scoreboard"
+
+[dependencies]
+# Templates
+askama_actix = { version = "~0.13" }
+
+# Webserver
+actix-web = { version = "~4.2" }
+actix-toolbox = { version = "~0.4" }
+
+# cli parser
+clap = { version = "~4.0" }
+
+# logging
+log = { version = "~0.4" }
+
+# serialization library
+serde = { version = "~1.0" }
+toml = { version = "~0.5" }
+chrono = { version = "~0.4" }
+
+# orm
+rorm = { version = "~0.3" }
+
+# async runtime
+tokio = { version = "~1.23" }
+
+[features]
+default = [
+    "clap/derive",
+    "rorm/tokio-rustls",
+    "serde/derive",
+    "chrono/serde",
+    "tokio/macros",
+    "tokio/rt-multi-thread",
+]
+
+rorm-main = []

@@ -1,0 +1,15 @@
+# IDE
+.idea/
+
+# Rust
+target/
+Cargo.lock
+
+# rorm
+database.toml
+.models.json
+
+# project
+config.toml
+*.sqlite3
+logs/
